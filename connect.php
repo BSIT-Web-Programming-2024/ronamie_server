@@ -2,9 +2,8 @@
 if($_SERVER['REQUEST_METHOD']=='POST'){
     $name=$_POST['name'];
     $email=$_POST['email'];
-    $gender=$_POST['gender'];
-    $mobile=$_POST['mobile'];
-    $password=$_POST['password'];
+    $phone=$_POST['phone'];
+    $message=$_POST['message'];
 
 
 $con=new mysqli('localhost','root','','form');
@@ -13,7 +12,8 @@ $con=new mysqli('localhost','root','','form');
 if($con){
    //echo " Connection successful";
    
-   $sql="insert into `register`(name,email,gender,mobile,password)values('$name','$email','$gender','$mobile','$password')";
+   $sql="insert into `register`(name,email,phone,message)values('$name','$email','$phone','$message')";
+
    $result=mysqli_query($con,$sql);
 
    if($result){
